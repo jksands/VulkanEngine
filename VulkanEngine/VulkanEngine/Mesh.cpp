@@ -49,7 +49,8 @@ void Mesh::CreateInstanceBuffer()
 	}
 
 	//Create buffer
-	VkDeviceSize bufferSize = sizeof(TransformData) * bufferData.size();
+	//VkDeviceSize bufferSize = sizeof(TransformData) * bufferData.size();
+	VkDeviceSize bufferSize = sizeof(TransformData) * 5;
 	instanceBuffer = std::make_shared<Buffer>(VkBuffer(), VkDeviceMemory());
 	Buffer::CreateBuffer(bufferSize, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, *instanceBuffer);
 
