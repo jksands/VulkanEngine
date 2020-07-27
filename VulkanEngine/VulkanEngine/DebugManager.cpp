@@ -139,6 +139,7 @@ bool DebugManager::CheckValidationLayerSupport()
 
 VKAPI_ATTR VkBool32 VKAPI_CALL DebugManager::DebugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagsEXT messageType, const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, void* pUserData)
 {
+	//std::cout << messageType << "test" <<std::endl;
 	//Methods for handling different types of messages unused for the moment so it is commented out
 	switch (messageSeverity) {
 	case VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT:

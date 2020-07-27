@@ -477,6 +477,7 @@ bool VulkanManager::CheckDeviceExtensionSupport(VkPhysicalDevice physicalDevice)
 
 int VulkanManager::RateDevice(VkPhysicalDevice physicalDevice)
 {
+	
 	//Get Device Properties
 	VkPhysicalDeviceProperties deviceProperties;
 	vkGetPhysicalDeviceProperties(physicalDevice, &deviceProperties);
@@ -490,16 +491,17 @@ int VulkanManager::RateDevice(VkPhysicalDevice physicalDevice)
 		return 0;
 	}
 
+
 	//Set a score based on optional features, initial score of 1 because it meets requirements
 	int score = 1;
 
-	/*
+	
 	//Output device scoring information
 	std::cout << deviceProperties.deviceName << " Score:" << std::endl;
 	std::cout << "\tMeets Requirements: 1" << std::endl;
 	std::cout << "\tDedicated Graphics Card: " << (deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU ? 1000 : 0) << std::endl;
 	std::cout << "\tMax Image Dimensions 2D: " << deviceProperties.limits.maxImageDimension2D << std::endl;
-	*/
+	
 
 	if (deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU) {
 		score += 1000;
